@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Dashboard</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
+    .outer {
+        position: relative;
+        height: 200vh;
+        width: 100%;
+        background-image: url("img2.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+        opacity: 0.8;
+        background-size: cover;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        list-style: none;
+        text-decoration: none;
+        font-family: 'Josefin Sans', sans-serif;
+    }
+
+    body {
+        background-color: #f3f5f9;
+    }
+
+    .wrapper {
+        display: flex;
+        position: relative;
+    }
+
+    .wrapper .sidebar {
+        width: 18rem;
+        height: 100%;
+        background: white;
+        padding: 30px 0px;
+        position: fixed;
+    }
+
+    .wrapper .sidebar h2 {
+        color: #fff;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .wrapper .sidebar ul li {
+        padding: 30px;
+    }
+
+    .wrapper .sidebar ul li a {
+        color: #bdb8d7;
+        text-align: center;
+        color: black;
+        font-weight: 700;
+        display: block;
+    }
+
+    .wrapper .sidebar ul li a .fas {
+        width: 25px;
+    }
+
+    .wrapper .sidebar ul li:hover {
+        background-color: #6596f8;
+        border-radius: 1rem;
+        text-align: center;
+        color: black;
+    }
+
+    .wrapper .sidebar ul li:hover a {
+        color: #fff;
+    }
+
+    .wrapper .sidebar .social_media {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+    }
+
+    .wrapper .sidebar .social_media a {
+        display: block;
+        width: 40px;
+        background: #594f8d;
+        height: 40px;
+        line-height: 45px;
+        text-align: center;
+        margin: 0 5px;
+        color: #bdb8d7;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+
+    .wrapper .main_content {
+        width: 100%;
+        margin-left: 200px;
+    }
+
+    .wrapper .main_content .header {
+        padding: 20px;
+        background: #fff;
+        /* color: #717171; */
+        border-bottom: 1px solid #e0e4e8;
+    }
+
+    .wrapper .main_content .info {
+        margin: 20px;
+        color: #717171;
+        line-height: 25px;
+    }
+    .active{
+        background-color:white;
+        border-radius: 1rem;
+    }
+
+    .wrapper .main_content .info div {
+        margin-bottom: 20px;
+    }
+
+    @media (max-height: 500px) {
+        .social_media {
+            display: none !important;
+        }
+    }
+
+    .photo {
+      margin-left: 4em;
+      margin-top: 2em;
+      width: 155px;
+      height: 155px;
+      left: 406px;
+      top: 135px;
+      border-radius: 80px;
+      border: 3px solid #006798;
+      background-image: url('u1.jpg');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-size: cover;
+    }
+
+    .name {
+        text-align: center;
+      width: 191px;
+      height: 30px;
+      left: 378px;
+      top: 235px;
+      margin-left: 2em;
+      margin-top: 1.3em;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 23px;
+      line-height: 27px;
+
+      color: #000000;
+    }
+
+    .email {
+        text-align: center;
+      margin-left: 2.3em;
+      margin-top: 0.5em;
+      width: 188px;
+      height: 23px;
+      left: 361px;
+      top: 339px;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 21px;
+
+      color: #727272;
+    }
+
+    .contact {
+        text-align: center;
+      margin-left: 3em;
+      margin-top: 1em;
+      width: 152px;
+      height: 24px;
+      left: 375px;
+      top: 291px;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 21px;
+
+      color: #727272;
+    }
+
+    .container2 {
+      margin-top: 1em;
+      padding: 20px 20px;
+      width: 58em;
+      height: 5.6em;
+      left: 351px;
+      top: 130px;
+
+      background: #ffffff;
+      border: 3px solid #006798;
+      box-sizing: border-box;
+      border-radius: 10px;
+    }
+
+    span1 {
+      margin-left: 0.4em;
+      width: 170px;
+      height: 29px;
+      left: 374px;
+      top: 150px;
+
+      font-family: Roboto Condensed;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 27px;
+      /* line-height: 29px; */
+
+      color: #000000;
+    }
+
+    span2 {
+      width: 172px;
+      height: 23px;
+      left: 543px;
+      top: 155px;
+      margin-top: 1em;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 20px;
+      line-height: 23px;
+
+      color: #000000;
+    }
+
+    span3 {
+        margin-left: 0.5em;
+        
+      width: 394px;
+      height: 22px;
+      left: 375px;
+      top: 179px;
+
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 19px;
+      line-height: 22px;
+
+      color: #505050;
+    }
+
+    span4 {
+      float: right;
+      color: #505050;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 22px;
+    }
+
+    .b{
+        border:none;
+        background-color: #3485ffa2;
+        border-radius: 25px;
+        height: 3rem;
+        width: 8rem;
+        font-size: 1em;
+    }
+
+</style>
+
+<body>
+    <div class="outer">
+        <div class="wrapper">
+            <div class="sidebar">
+                <h2 style="color:blue;">MEDLOG</h2>
+                <ul>
+                    <li><a href="/pat-dashboard"><i class="fas fa-home"></i>Dashboard</a></li>
+                    <li><a href="/pat-docs"><i class="fas fa-address-card"></i>My Doctors</a></li>
+                    <li><a href="/cons"><i class="fas fa-user"></i>Consultations</a></>
+                    <li><a href="/pre"><i class="fas fa-blog"></i>Prescriptions</a></li>
+                    <li><a href="/med"><i class="fas fa-project-diagram"></i>Medications Adminstered</a></li>
+                    <li><a href="/"><i class="fas fa-address-book"></i>Logout</a></li>
+                </ul>
+
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="main_content">
+                        <div class="header"
+                            style="font-size:30px;background-color:#0d6efd;color:white;border-radius:1rem;
+                    font-size:33px;background-color: #0d6efd;color: white;border-radius: 1rem;width: 60rem;height:7rem;margin-left: 2rem;margin-top: 1rem;text-align: center;">
+                            Hello <%= patname %> <br> <span style="font-size:18px"> Welcome to Medlog</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="position: absolute;margin-top: 3em;margin-left: 0.7em; width: 60em;height: 23em;left: 333px;top: 112px;border: 3px solid #006798;box-sizing: border-box;border-radius: 10px;background-color: white;">
+            <div class="photo"></div>
+            <div class="name"><%= patname %></div>
+            <div class="contact">+91 <%= phone %></div>
+            <div class="email"><%= email %></div>
+            <div>
+              <table style="margin-left: 16em; margin-top: -19em;" >
+                <tr style="width: 58px;
+                height: 20px;
+                left: 587px;
+                top: 142px;
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 21px;
+                line-height: 19px;
+                color: #4e4e4e;">
+                  <td style="padding-right: 5em; padding-top: 1.5em; padding-left: 2em;">•Gender</td>
+                  <td style="padding-left: 0;padding-top: 1.5em;">•Dob</td>
+                  <td style="padding-left: 2em;padding-top: 1.5em;">•Medical Conditions</td>
+                </tr>
+                <tr style="width: 59px;height: 22px;left: 587px;top: 182px;font-family: Roboto;font-style: normal;font-weight: normal;font-size: 20px;line-height: 19px;color: #000000;">
+                  <td style="padding-left: 0.4em;padding-top: 0.8em; padding-left: 2.8em;"><%= gen %></td>
+                  <td style="padding-left: 1.1em;padding-top: 0.8em;"><%= dob %></td>
+                  <td style="padding-left: 3em;padding-top: 0.8em;"><%= m %></td>
+                </tr>
+                <tr style="width: 58px;height: 20px;left: 587px;top: 142px;font-family: Roboto;font-style: normal;font-weight: normal;font-size: 19px;line-height: 19px;color: #4e4e4e;">
+                </tr>
+                <tr style="width: 58px;height: 20px;left: 587px;top: 142px;font-family: Roboto;font-style: normal;font-weight: normal;font-size: 19px;line-height: 19px;color: #4e4e4e;;">
+                  <td style="padding-right: 5em; padding-top: 1.5em; padding-left: 2em;">•Blood Group</td>
+                  <td style="padding-left: 0;padding-top: 1.5em;">•Height (in cm)</td>
+                </tr>
+                <tr style="width: 59px;height: 22px;left: 587px;top: 182px;font-family: Roboto;font-style: normal;font-weight: normal;font-size: 20px;line-height: 19px;color: #000000;">
+                  <td style="padding-left: 0.4em;padding-top: 0.8em; padding-left: 2.8em;"><%= bg %></td>
+                  <td style="padding-left:1.1em;padding-top: 0.8em;"><%= h %></td>
+                </tr>
+
+                <tr style="width: 58px;height: 20px;left: 587px;top: 142px;font-family: Roboto;font-style: normal;font-weight: normal;font-size: 19px;line-height: 19px;color: #4e4e4e;;">
+                    <td style="padding-right: 5em; padding-top: 3em; padding-left: 2em;">•Weight (in Kg)</td>
+                    <td style="padding-left: 0;padding-top: 3em;">•Allergies</td>
+                  </tr>
+                  <tr style="width: 59px;height: 22px;left: 587px;top: 182px;font-family: Roboto;font-style: normal;font-weight: normal;font-size: 20px;line-height: 19px;color: #000000;">
+                    <td style="padding-left: 0.4em;padding-top: 0.8em; padding-left: 2.8em;"><%= w %></td>
+                    <td style="padding-left:1.1em;padding-top: 0.8em;"><%= al %></td>
+                  </tr>
+
+              </table>
+            </div>
+            <div style="padding-top: 4.5em;">
+                <h2>Link Requests</h2>
+                <div>
+                    <% name.forEach(function(item){ %>
+                        <div class="container2">
+                            <table>
+                                <% name.forEach(function(item){ %>
+                                <tr>
+                                <td><span2>Dr. <%=item.name%> wants to link with you</span2></td>
+                                <td>
+                                    <form action="/accept" method="post" >
+                                        <input type="hidden" name="docname" value=<%=item.name%> >
+                                        <input type="hidden" name="docusname" value=<%= item.username %>>
+                                        <input type="hidden" name="docspec" value=<%= item.spec %>>
+                                        <input type="hidden" name="clname" value=<%= item.clname %>>
+                                        <input type="hidden" name="cladd" value=<%= item.cladd %>>
+                                        <input type="hidden" name="docphone" value=<%= item.docnum %>>
+                                        <button class="b" style="margin: 0 1em 0 20em;" type="submit">Accept</button>
+                                    </form>
+                                </td>
+                                <td>
+                                    <form action="/decline" method="post">
+                                        <input type="hidden" name="docname" value=<%=item.name%>>
+                                        <input type="hidden" name="docusname" value=<%=item.username%>>
+                                        <button class="b" type="submit">Decline</button>
+                                    </form>
+                                </td>
+                                </tr>
+                                <% }) %>
+                            </table>
+                        </div>
+                    <% }) %>
+                </div>
+            </div>
+            
+          </div>
+    </div>
+</body>
+
+</html>

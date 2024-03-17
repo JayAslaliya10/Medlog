@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Prescrpitions</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap");
+
+    .outer {
+      position: relative;
+      height: 200vh;
+      width: 100%;
+      background-image: url("img2.jpg");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+      opacity: 1;
+      background-size: cover;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      list-style: none;
+      text-decoration: none;
+      font-family: "Josefin Sans", sans-serif;
+    }
+
+    body {
+      background-color: #f3f5f9;
+    }
+
+    .wrapper {
+      display: flex;
+      position: relative;
+    }
+
+    .wrapper .sidebar {
+      width: 18rem;
+      height: 100%;
+      background: white;
+      padding: 30px 0px;
+      position: fixed;
+    }
+
+    .wrapper .sidebar h2 {
+      color: #fff;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .wrapper .sidebar ul li {
+      padding: 30px;
+    }
+
+    .wrapper .sidebar ul li a {
+      color: #bdb8d7;
+      text-align: center;
+      color: black;
+      font-weight: 700;
+      display: block;
+    }
+
+    .wrapper .sidebar ul li a .fas {
+      width: 25px;
+    }
+
+    .wrapper .sidebar ul li:hover {
+      background-color: #6596f8;
+      border-radius: 1rem;
+      text-align: center;
+      color: black;
+    }
+
+    .wrapper .sidebar ul li:hover a {
+      color: #fff;
+    }
+
+    .wrapper .sidebar .social_media {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+    }
+
+    .wrapper .sidebar .social_media a {
+      display: block;
+      width: 40px;
+      background: #594f8d;
+      height: 40px;
+      line-height: 45px;
+      text-align: center;
+      margin: 0 5px;
+      color: #bdb8d7;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
+
+    .wrapper .main_content {
+      width: 100%;
+      margin-left: 200px;
+    }
+
+    .wrapper .main_content .header {
+      padding: 20px;
+      background: #fff;
+      /* color: #717171; */
+      border-bottom: 1px solid #e0e4e8;
+    }
+
+    .wrapper .main_content .info {
+      margin: 20px;
+      color: #717171;
+      line-height: 25px;
+    }
+
+    .wrapper .main_content .info div {
+      margin-bottom: 20px;
+    }
+
+    @media (max-height: 500px) {
+      .social_media {
+        display: none !important;
+      }
+    }
+
+    .container2 {
+      margin-left: 20.5em;
+      margin-top: 2em;
+      padding: 16px;
+      width: 60em;
+      height: 24rem;
+      left: 351px;
+      top: 130px;
+
+      background: #ffffff;
+      border: 3px solid #006798;
+      box-sizing: border-box;
+      border-radius: 10px;
+    }
+
+    span1 {
+      margin-left: 0.4em;
+      width: 170px;
+      height: 29px;
+      left: 374px;
+      top: 150px;
+
+      font-family: Roboto Condensed;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 27px;
+      /* line-height: 29px; */
+
+      color: #000000;
+    }
+
+    span2 {
+      width: 172px;
+      height: 23px;
+      left: 543px;
+      top: 155px;
+      margin-left: 0.5em;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 20px;
+      line-height: 23px;
+
+      color: #000000;
+    }
+
+    span3 {
+        margin-left: 0.5em;
+        
+      width: 394px;
+      height: 22px;
+      left: 375px;
+      top: 179px;
+
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 19px;
+      line-height: 22px;
+
+      color: #353434;
+    }
+
+    span4 {
+      float: right;
+      color: #505050;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 20px;
+      line-height: 22px;
+    }
+
+    span5{
+        margin-left: 0.6em;
+      width: 170px;
+      height: 29px;
+      left: 374px;
+      top: 150px;
+
+      font-family: Roboto Condensed;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 20px;
+    }
+
+  </style>
+
+  <body>
+    <div class="outer">
+      <div class="wrapper">
+        <div class="sidebar">
+          <h2 style="color: blue">MEDLOG</h2>
+          <ul>
+            <li><a href="/pat-dashboard"><i class="fas fa-home"></i>Dashboard</a></li>
+            <li><a href="/pat-docs"><i class="fas fa-address-card"></i>My Doctors</a></li>
+            <li><a href="/cons"><i class="fas fa-user"></i>Consultations</a></li>
+            <li><a href="/pre"><i class="fas fa-blog"></i>Prescriptions</a></li>
+            <li><a href="/med"><i class="fas fa-project-diagram"></i>Medications Adminstered</a></li>
+            <li><a href="/"><i class="fas fa-address-book"></i>Logout</a></li>
+        </ul>
+        </div>
+        <div class="container">
+          <div class="row" style="margin-left: 3rem; margin-top: 2rem">
+            <div class="col">
+              <h2 style="font-size: 3em; margin-left: 9rem">Consultations</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% n.forEach(function(item){ %>
+        <div class="container2">
+          <span1>Doctor  : <%=item.docname%></span1><span2><span4>Date : <%=item.date%></span4></span2>
+          <br><span5>Specialisation : <%=item.spec%></span5><br>
+          <span5>Clinic  : <%=item.clin%></span5>
+          
+          <br><br>
+
+          <span2>Patient  : <%=item.name%></span2><br/>
+          <span2>Time Of Consultation - <%=item.time%></span2><br><br>
+          <span2>Treatment - <%=item.treatment%></span2><br>
+          <span2>Cost - Rs <%=item.cost%></span2><br><br>
+          <span3>Medication Administered : <%=item.medication%></span3><br>
+          <span3>Prescription : <%=item.prescription%></span3><br>
+          <span3>Instructions : <%=item.instruction%></span3><br>
+        </div>
+      <% }) %>
+    </div>
+  </body>
+</html>
